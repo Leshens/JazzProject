@@ -10,7 +10,8 @@ import java.util.Optional;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {
 
-    @Query("SELECT s FROM Client s where s.name = ?1")
-    Optional<Client> findByName(String name);
+    void deleteClientById(Long id);
+
+    Optional<Client> findClientById(Long id);
 }
 
